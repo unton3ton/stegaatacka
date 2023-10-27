@@ -233,6 +233,51 @@ INFO     [2023-10-26 11:57:40,517] RS estimate for embedded_img.png is -0.001678
 4. #### Энтропия изображения
 
 
+Энтропия измеряет информационное содержание изображения, используемое при обработке изображений. Высокое значение энтропии обозначает сложное изображение с широким диапазоном значений пикселей, в то время как низкое значение энтропии обозначает более простое и однородное изображение. Энтропия может быть использована для оценки качества или сложности изображения и поиска наиболее информативных частей изображения для дальнейшей обработки или анализа [13].  
+
+
+Попробуем посчитать величину энтропии для пустого и заполненного контейнеров в наших методах внедрения ЦВЗ **entro.py**. Вот результаты и некоторые гистограммы (остальные в папке     **stegaatacka/img/**):  
+
+
+Image Entropy 6.884162225879558 for 1.png  
+Image Entropy 6.884168387506503 for new.png  (контейнер с текстом)  
+
+
+Image Entropy 6.878406945299694 for tinne-7.jpeg  
+Image Entropy 6.878406945299694 for tinne-7-with-hidetext.jpeg  (контейнер с текстом)  
+
+
+Image Entropy 3.639428204549869 for re2.png  
+
+![](https://raw.githubusercontent.com/unton3ton/stegaatacka/main/img/ImageEntropy_re2.png.png)
+
+Image Entropy 3.6975179459936514 for embedded_text.png  (контейнер с текстом)  
+
+![](https://raw.githubusercontent.com/unton3ton/stegaatacka/main/img/ImageEntropy_embedded_text.png.png)
+
+Image Entropy 3.713204815625096 for embedded_text.jpg  (контейнер с текстом)  
+Image Entropy 4.8650606316696425 for embedded_img.png  (контейнер с qr-изображением)
+
+![](https://raw.githubusercontent.com/unton3ton/stegaatacka/main/img/ImageEntropy_embedded_img.png.png)
+
+Image Entropy 0.046919139587702725 for embedded_text1.png  (повреждённый контейнер с текстом с вырезанной частью в графредакторе)  
+
+![](https://raw.githubusercontent.com/unton3ton/stegaatacka/main/img/ImageEntropy_embedded_text1.png.png)
+
+
+Image Entropy 0.38195800357484044 for 7corupt.png 
+
+
+Image Entropy 0.8511453835607288 for watermark_qrcode.png  
+Image Entropy 0.96557866684501 for watermark_qrcode (2-я извлёк).png  
+Image Entropy 5.807410296979399 for watermark_qrcode()извлёк после телеги.jpg    
+
+
+Энтропия контейнера слегка повышается при частотном внедрении текста и чуть больше при частотном внедрении изображения, но нечувствительна к топорному битовому и LSB-внедрению. К тому же при частотном внедрении текста в иображение её величину можно лекго изменить, если вырезать какую-нибудь подходящую часть (а передаваемый текст, напомню, не пострадает). отсюда вывод: сей подход не поможет в реальной практике.
+
+
+## Вывод
+
 
 
 # Sources
@@ -249,5 +294,4 @@ INFO     [2023-10-26 11:57:40,517] RS estimate for embedded_img.png is -0.001678
 10. [Stego Analyzer Версия: 2.1](https://github.com/Ner-Kat/StegoAnalyzer/tree/main) (*sudo apt-get install python3-tk*) *python StegoAnalyzer.py*  
 11. [Steganography: Least Significant Bit Steganography for bitmap images (.bmp and .png)](https://github.com/ragibson/Steganography/tree/master) *stegolsb stegdetect -i embedded_text.png -n 2*  
 12. [Ma3shka](https://github.com/unton3ton/Ma3shka)
-13. []()
-14. []()
+13. [A Complete Guide to Picture Complexity Assessment Using Entropy](https://unimatrixz.com/blog/latent-space-image-quality-with-entropy/)
