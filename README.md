@@ -104,19 +104,28 @@ True
 Почему бы не использовать профрешение и искать внедрение ЦВЗ с помощью него? Интернет-сёрфинг помог найти такие программы [6,7], но большая часть из них либо давно не обновлялась (последний коммит на гитхаб 10 лет назад), либо просто не запускается (по крайней мере, мне не удалось заставить их работать). Есть и более свежие (а главное запускаемые решения) [8-11], которые не нуждаются в оригинальном изображении для своей работы. Let's go'ушки тестить их!  
 
 
-1. Сравним результаты "выхлопа" [11] для чистого изображения девушки и костыльно внедрённой видимой ватерматки:
+1. Сравним результаты "выхлопа" [11] для чистого изображения девушки и костыльно внедрённой видимой ватерматки **simple-watermark.py**:
 
 
-$ stegolsb stegdetect -i tinne-7.png -n 2  
+> $ stegolsb stegdetect -i tinne-7.png -n 2  
 
 <p>
     <img src="https://raw.githubusercontent.com/unton3ton/stegaatacka/main/img/tinne-7.png" >
     <img src="https://raw.githubusercontent.com/unton3ton/stegaatacka/main/img/tinne-7_2LSBs.png" >
 </p>
 
-$ stegolsb stegdetect -i simple-result.png -n 2  
+> $ stegolsb stegdetect -i simple-result.png -n 2  
+
+<p>
+    <img src="https://raw.githubusercontent.com/unton3ton/stegaatacka/main/img/simple-result.png" >
+    <img src="https://raw.githubusercontent.com/unton3ton/stegaatacka/main/img/simple-result_2LSBs.png" >
+</p>
 
 
+Конечно заметна некоторая "сглаженность" шума в месте внедрения изображения, но это только на данном примере и при условии, что мы знаем, что есть это внедрение:) Остальные примеры можно посмотреть в папке **stegaatacka/img/**, но они малоинформативны и не так уж однозначны.  
+
+
+2. 
 
 
 # Sources
