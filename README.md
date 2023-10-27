@@ -69,6 +69,28 @@ $ diff -y <(xxd 1.png) <(xxd new.png) > diffhex-LSB.txt # находит отл�
 $ diff -y <(xxd re2.png) <(xxd embedded_text.png) > diffhex-frequency.txt # находит отличающиеся строки по всему файлу (полностью разные файлы)  
 
 
+5. Использование Python-библиотеки *ImageHash 4.3.1* [4] (cкрипт **attack.py**) и перцептивного хэша [5] позволил выявить присутствие частотного внедрения, но проигнорировал топорное и LSB:
+
+
+('re2.png') ('embedded_text.png')  
+f6b4926217d0ac6e  
+f6b492661791cc6a  
+False  
+6  
+
+
+tinne-7.jpeg tinne-7-with-hidetext.jpeg  
+94d4a463eb4ce60f  
+94d4a463eb4ce60f  
+True  
+0  
+
+
+1.png new.png  
+ff91c1b233478dc0  
+ff91c1b233478dc0  
+True  
+0  
 
 
 Но решающий недостаток таких методов: необходим оригинал контейнера, что не всегда доступно.
@@ -78,8 +100,8 @@ $ diff -y <(xxd re2.png) <(xxd embedded_text.png) > diffhex-frequency.txt # на
 1. [Стеганография с Python. Скрытое сообщение на уровне байтов](https://telegra.ph/Steganografiya-s-Python-Skrytoe-soobshchenie-na-urovne-bajtov-08-19)
 2. [humashineye/Naive/simple-dif-img.py](https://github.com/unton3ton/humashineye/blob/main/Naive/simple-dif-img.py)
 3. [How do I compare binary files in Linux?](https://superuser.com/questions/125376/how-do-i-compare-binary-files-in-linux)
-4. []()
-5. []()
+4. [pip install ImageHash](https://pypi.org/project/ImageHash/)
+5. [«Выглядит похоже». Как работает перцептивный хэш](https://habr.com/ru/articles/120562/)
 6. []()
 7. []()
 8. []()
