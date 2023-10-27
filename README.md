@@ -125,7 +125,7 @@ True
 Конечно заметна некоторая "сглаженность" шума в месте внедрения изображения, но это только на данном примере и при условии, что мы знаем, что есть это внедрение:) Остальные примеры можно посмотреть в папке **stegaatacka/img/**, но они малоинформативны и не так уж однозначны.  
 
 
-2. Аналогично из результатов [10] сложно вынести точный вердикт: есть ЦВЗ или нетв изображении (**stegaatacka/output/**). Например, мы скормин программе файл без ЦВЗ **1.png**, но программа что-то нашла:
+2. Аналогично из результатов [10] сложно вынести точный вердикт: есть ЦВЗ или нет в изображении (**stegaatacka/output/**). Например, мы скормим программе файл без ЦВЗ **1.png**, но программа что-то нашла:
 
 ![](https://raw.githubusercontent.com/unton3ton/stegaatacka/main/output/A1.png)
 
@@ -137,8 +137,24 @@ True
 
 ![](https://raw.githubusercontent.com/unton3ton/stegaatacka/main/output/Apic2in1.png)
 
-Ну хоть какое-то отличие, но вряд ли это однозначное определение, т.к. слишком малая разница (*статистическая значимость вообще есть?* --не, не слышал--)  
+Ну хоть какое-то отличие, но вряд ли это однозначное определение, т.к. слишком малая разница (*статистическая значимость вообще есть?* ~~не, не слышал~~) 
+Для частотного внедрения результаты "чуть получше", но однозначного заключения по ним я бы делать однозначно не стал:)  Потому что -- берём пустой контейнер:
 
+![](https://raw.githubusercontent.com/unton3ton/stegaatacka/main/output/Are2.png)
+
+А потом частотно-заполненный другим изображением:
+
+![](https://raw.githubusercontent.com/unton3ton/stegaatacka/main/output/Aembedded_img.png)
+
+кажется, что мы изображения для анализа перепутали, но нет, примерно таже картина при частотно-текстовом заполнении:
+
+![](https://raw.githubusercontent.com/unton3ton/stegaatacka/main/output/Aembedded_text.png)
+
+А потом повредили контейнер (текст мы можем извлечь, как показано в предыдущем репо [12]), а вот обнаружить внедрение ЦВЗ этим инструментов уже, видимо, нет.
+
+![](https://raw.githubusercontent.com/unton3ton/stegaatacka/main/output/Aembedded_text1.png)
+
+3. [9] имеет только CLI, но да ладно, а что по результатам сравнения?
 
 # Sources
 
@@ -153,6 +169,6 @@ True
 9. [StegMachine](https://github.com/Panda-Lewandowski/StegMachine)
 10. [Stego Analyzer Версия: 2.1](https://github.com/Ner-Kat/StegoAnalyzer/tree/main) (*sudo apt-get install python3-tk*) *python StegoAnalyzer.py*  
 11. [Steganography: Least Significant Bit Steganography for bitmap images (.bmp and .png)](https://github.com/ragibson/Steganography/tree/master) *stegolsb stegdetect -i embedded_text.png -n 2*  
-12. []()
+12. [Ma3shka](https://github.com/unton3ton/Ma3shka)
 13. []()
 14. []()
