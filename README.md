@@ -154,7 +154,86 @@ True
 
 ![](https://raw.githubusercontent.com/unton3ton/stegaatacka/main/output/Aembedded_text1.png)
 
-3. [9] имеет только CLI, но да ладно, а что по результатам сравнения?
+3. [9] имеет только CLI, но да ладно, а что по результатам сравнения? Тоже нет однозначного заключения по результатам разных метрик:
+
+
+$ python3 stegmachine.py --analysis spa new.png output (контейнер с текстом)  
+INFO     [2023-10-26 11:29:17,789] Calculating spa beta for new.png ...🌀  
+INFO     [2023-10-26 11:29:21,239] SPA estimate for new.png is 0.02431179113635226  
+
+
+$ python3 stegmachine.py --analysis spa 1.png output (пустой контейнер)  
+INFO     [2023-10-26 11:30:35,925] Calculating spa beta for 1.png ...🌀  
+INFO     [2023-10-26 11:30:39,449] SPA estimate for 1.png is 0.024313585065328634  
+
+
+$ python3 stegmachine.py --analysis rs 1.png output (пустой контейнер)  
+INFO     [2023-10-26 11:31:22,868] Calculating rs estimate for 1.png ...🌀   
+INFO     [2023-10-26 11:31:37,613] RS estimate for 1.png is 0.013611655019081436  
+
+
+$ python3 stegmachine.py --analysis rs new.png output (контейнер с текстом)  
+INFO     [2023-10-26 11:31:51,781] Calculating rs estimate for new.png ...🌀  
+INFO     [2023-10-26 11:32:06,292] RS estimate for new.png is 0.013617516656435286  
+
+
+python3 stegmachine.py --analysis visual -j new.png output (контейнер с текстом) 
+
+![](https://raw.githubusercontent.com/unton3ton/stegaatacka/main/output/LSB-new.bmp)
+
+python3 stegmachine.py --analysis rs  tinne-7-with-hidetext.jpeg output (контейнер с текстом) 
+INFO     [2023-10-26 11:50:49,349] RS estimate for tinne-7-with-hidetext.jpeg is 0.002579826565077244
+
+$ python3 stegmachine.py --analysis rs  tinne-7.jpeg output (пустой контейнер)  
+INFO     [2023-10-26 11:51:23,916] RS estimate for tinne-7.jpeg is 0.002579826565077244
+
+
+python3 stegmachine.py --analysis spa  tinne-7-with-hidetext.jpeg output (контейнер с текстом)   
+INFO     [2023-10-26 11:52:16,905] SPA estimate for tinne-7-with-hidetext.jpeg is 0.004610292944580677  
+
+
+$ python3 stegmachine.py --analysis spa  tinne-7.jpeg output (пустой контейнер)  
+INFO     [2023-10-26 11:52:32,839] SPA estimate for tinne-7.jpeg is 0.004610292944580677  
+
+
+$ python3 stegmachine.py --analysis spa  re2.png output (пустой контейнер)    
+INFO     [2023-10-26 11:53:47,146] SPA estimate for re2.png is 0.01116957010861  
+
+
+$ python3 stegmachine.py --analysis spa  embedded_text.png output (контейнер с текстом)  
+INFO     [2023-10-26 11:54:18,967] SPA estimate for embedded_text.png is 0.0029202760186748822  
+
+
+$ python3 stegmachine.py --analysis spa  embedded_text.jpg output (контейнер с текстом)   
+INFO     [2023-10-26 11:54:31,118] SPA estimate for embedded_text.jpg is 0.01194868518796146  
+
+
+$ python3 stegmachine.py --analysis spa  embedded_img.png output (контейнер с qr-изображением)   
+INFO     [2023-10-26 11:54:49,633] SPA estimate for embedded_img.png is 0.007523952658835668  
+
+
+$ python3 stegmachine.py --analysis rs re2.png output (пустой контейнер)  
+INFO     [2023-10-26 11:56:17,821] RS estimate for re2.png is -0.014033537220522937  
+
+
+$ python3 stegmachine.py --analysis rs embedded_text.png output (контейнер с текстом)  
+INFO     [2023-10-26 11:56:46,344] RS estimate for embedded_text.png is -0.022121029378369114  
+
+
+$ python3 stegmachine.py --analysis rs embedded_text.jpg output (контейнер с текстом) 
+INFO     [2023-10-26 11:57:06,395] RS estimate for embedded_text.jpg is 0.0030612676420325637  
+
+$ python3 stegmachine.py --analysis rs embedded_img.png output  
+INFO     [2023-10-26 11:57:40,517] RS estimate for embedded_img.png is -0.0016789800292105084  
+
+
+Опять не всё так однозначно -- отличия не столь существенные для строгого заключения  о наличии внедрения ЦВЗ.  
+
+
+4. #### Энтропия изображения
+
+
+
 
 # Sources
 
