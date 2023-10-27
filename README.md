@@ -4,7 +4,7 @@
 
 ![](https://raw.githubusercontent.com/unton3ton/stegaatacka/main/img/tinne-7.png)
 
-> ### Видишь разницу между картинками? А она есть! (смотри hex-представление text-with.txt & text-without.txt)
+> ### Видишь разницу между картинками? А она есть! (смотри byte-представление в text-with.txt & text-without.txt)
 
 ![](https://raw.githubusercontent.com/unton3ton/stegaatacka/main/img/tinne-7-with-hidetext.jpeg)
 
