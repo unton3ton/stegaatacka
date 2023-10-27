@@ -95,6 +95,20 @@ True
 
 Но решающий недостаток таких методов: необходим оригинал контейнера, что не всегда доступно.
 
+
+## Спецрешение
+
+"К чему вообще нужны эти танцы с бубном?"  
+
+
+Почему бы не использовать профрешение и искать внедрение ЦВЗ с помощью него? Интернет-сёрфинг помог найти такие программы [6,7], но большая часть из них либо давно не обновлялась (последний коммит на гитхаб 10 лет назад), либо просто не запускается (по крайней мере, мне не удалось заставить их работать). Есть и более свежие (а главное запускаемые решения) [8-11], которые не нуждаются в оригинальном изображении для своей работы. Let's go'ушки тестить их!  
+
+
+
+
+
+
+
 # Sources
 
 1. [Стеганография с Python. Скрытое сообщение на уровне байтов](https://telegra.ph/Steganografiya-s-Python-Skrytoe-soobshchenie-na-urovne-bajtov-08-19)
@@ -102,11 +116,12 @@ True
 3. [How do I compare binary files in Linux?](https://superuser.com/questions/125376/how-do-i-compare-binary-files-in-linux)
 4. [pip install ImageHash](https://pypi.org/project/ImageHash/)
 5. [«Выглядит похоже». Как работает перцептивный хэш](https://habr.com/ru/articles/120562/)
-6. []()
-7. []()
-8. []()
-9. []()
-10. []()
-11. []()
+6. [Обратная сторона стеганографии](https://xakep.ru/2007/04/18/37769/)
+7. [3 Free Steganography Detection Software to do Steganalysis on Images](https://www.ilovefreesoftware.com/04/featured/free-steganography-detection-software-steganalysis-images.html)
+8. [Скрывать не скрывая. Еще раз о LSB-стеганографии, хи-квадрате и… сингулярности?](https://habr.com/ru/articles/422593/)
+9. [StegMachine](https://github.com/Panda-Lewandowski/StegMachine)
+10. [Stego Analyzer Версия: 2.1](https://github.com/Ner-Kat/StegoAnalyzer/tree/main) (*sudo apt-get install python3-tk*) *python StegoAnalyzer.py*  
+11. [Steganography: Least Significant Bit Steganography for bitmap images (.bmp and .png)](https://github.com/ragibson/Steganography/tree/master) *stegolsb stegdetect -i embedded_text.png -n 2*  
 12. []()
 13. []()
+14. []()
